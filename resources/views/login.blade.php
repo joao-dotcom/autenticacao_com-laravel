@@ -58,13 +58,13 @@
                                         <span class="input-group-text" id="basic-addon1">
                                             <i data-feather="user" class="feather-sm"></i>
                                         </span>
-                                    <input type="text" class="form-control form-control-lg" placeholder="E-mail" name="usuario" id="usuario">
+                                    <input type="text" class="form-control form-control-lg" placeholder="E-mail" name="email" id="email">
                                 </div>
                                 <div class="input-group mb-3">
                                         <span class="input-group-text" id="basic-addon2">
                                             <i data-feather="edit-2" class="feather-sm"></i>
                                         </span>
-                                    <input type="password" class="form-control form-control-lg" placeholder="Senha" name="senha" id="senha">
+                                    <input type="password" class="form-control form-control-lg" placeholder="Senha" name="password" id="password">
                                 </div>
                                 <div class="mb-3 text-center">
                                     <div class="col-xs-12 pb-3">
