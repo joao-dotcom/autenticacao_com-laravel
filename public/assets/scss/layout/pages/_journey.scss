@@ -1,0 +1,134 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.13 journey css start
+/*----------------------------------------*/
+.tp-journey {
+    &-item {
+        padding: 25px 25px;
+        border-radius: 14px;
+        padding-bottom: 15px;
+        width: 285px;
+        position: relative;
+        transition: .3s;
+        border: 1px solid #535353;
+        background-color: var(--tp-common-black);
+        @media #{$xl}{
+            width: 265px;
+        }
+        @media #{$lg}{
+            width: 225px;
+        }
+        @media #{$md}{
+            width: 175px;
+        }
+        @media #{$xs}{
+            width:100%;
+        }
+        & h6 {
+            font-size: 20px;
+            padding-bottom: 5px;
+            color: var(--tp-common-white);
+            @media #{$lg,$md,$xs}{
+                font-size: 18px;
+            }  
+        }
+        & p {
+            margin-bottom: 0;
+            color: rgba(255, 255, 255, 0.7);
+            @media #{$lg,$md,$xs}{
+                font-size: 14px;
+            }  
+        }
+        &:hover {
+            border: 1px solid var(--tp-theme-1);
+        }
+    }
+    &-top-wrap {
+        padding: 0 328px;
+        @media #{$xxxl}{
+            padding: 0 220px;
+        }
+        @media #{$xxl}{
+            padding: 0 140px;
+        }
+        @media #{$xl}{
+            padding: 0 100px;
+        }
+        @media #{$lg}{
+            padding: 0 50px;
+        }
+        @media #{$md}{
+            padding: 0 80px;
+        }
+        @media #{$xs}{
+            padding: 0 15px;
+            flex-wrap: wrap;
+        }
+        & .tp-journey-item {
+            margin-bottom: 30px;
+            &::after{
+                position: absolute;
+                content: '';
+                bottom:-30px;
+                left: 50%;
+                width: 1px;
+                height: 30px;
+                transform: translateX(-50%);
+                background-color: #535353;
+                transition: .3s;
+                @media #{$xs}{
+                    display: none;
+                }
+            }
+            &:hover {
+                &::after{
+                    background-color: var(--tp-theme-1);
+                }
+            }
+            
+        }
+    }
+    &-bottom-wrap {
+        border-top: 4px solid #535353;
+        @media #{$xs}{
+            border-top:none;
+            flex-wrap: wrap;
+        }
+        padding:0 100px;
+        @media #{$xxxl,$xxl}{
+            padding: 0 50px;
+        }
+        @media #{$xl,$lg,$md,$xs}{
+            padding: 0 15px;
+        }
+        & .tp-journey-item {
+            margin-top: 30px;
+            &::after{
+                position: absolute;
+                content: '';
+                top:-30px;
+                left: 50%;
+                width: 1px;
+                height: 30px;
+                transform: translateX(-50%);
+                background-color: #535353;
+                transition: .3s;
+                @media #{$xs}{
+                    display: none;
+                }
+            }
+            &:hover {
+                &::after{
+                    background-color: var(--tp-theme-1);
+                }
+            }
+        }
+    }
+    &-shape-1 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+}

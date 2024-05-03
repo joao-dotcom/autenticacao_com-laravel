@@ -1,0 +1,55 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.1 about css start
+/*----------------------------------------*/
+.tp-about {
+    &-ptb {
+        padding-top: 165px;
+        padding-bottom: 90px;
+    }
+    &-title {
+        font-size: 50px;
+        & span {
+            color: var(--tp-theme-1);
+            text-decoration:2px underline;
+        }
+
+    }
+    &-big-text {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        & span {
+            display: inline-block;
+            line-height: 1;
+            font-size: 300px;
+            font-weight: 700;
+            background: -webkit-linear-gradient(-86deg, #fff 10% , rgba(105, 89, 89, 0.3) 53%, rgba(105, 89, 89, 0.3) 91%);
+            -webkit-background-clip: text;
+            -webkit-text-stroke: 1px transparent;
+            color: white;
+        }
+
+    }
+}
+.tp-about-details{
+    &-thumb {
+        & img {
+            border-radius: 14px;
+        }
+    }
+    &-thumb-wrap {
+        margin-top: -55px;
+        & .tp-feature-title-box {
+            margin-top: -77px;
+        }
+        & .tp-feature-shape-1{
+            @media #{$xs}{
+               transform: scale(.6);
+            }
+        }
+    }
+}

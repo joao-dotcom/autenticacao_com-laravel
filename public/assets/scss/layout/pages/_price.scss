@@ -1,0 +1,186 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.17 price css start
+/*----------------------------------------*/
+
+.tp-price {
+    &-item {
+        padding: 50px 49px;
+        padding-top: 43px;
+        border-radius: 14px;
+        position: relative;
+        border: 1px solid #E1E1E1;
+        transition: .4s;
+        background-color: var(--tp-common-white);
+        @media #{$lg}{
+            padding: 50px 23px;
+        }
+        @media #{$xs}{
+            padding: 50px 30px;
+        }
+        &.border-theme {
+            border: 1px solid var(--tp-theme-1);
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            top: 0px;
+            left:0px;
+            width: 100%;
+            height: 100%;
+            border-radius: 14px;
+            transition: .4s;
+            background-color: var(--tp-common-black);
+            z-index: -1;
+        }
+        &.active {
+            border: 1px solid var(--tp-common-black);
+            & .tp-price-top{
+                & h5 {
+                    color: var(--tp-theme-1);
+                }
+            }
+            & .tp-price-button {
+                & .tp-btn-border {
+                    background-color: var(--tp-common-black);
+                    & span {
+                        color: var(--tp-common-white);
+                    }
+                    &:hover {
+                        background-color: var(--tp-theme-1);
+                    }
+                }
+            }
+            &::after{
+                top: 10px;
+                left:10px;
+            }
+            
+        }
+    }
+    &-number {
+        font-size: 80px;
+        font-weight: 600;
+        color: transparent;
+        line-height: 1;
+        padding-bottom: 7px;
+        text-transform: uppercase;
+        transition: .4s;
+        -webkit-text-stroke: 2px var(--tp-theme-1);
+        @media #{$lg,$xs}{
+            font-size: 60px;
+        }
+        & i {
+            font-size: 40px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-style: normal;
+        }
+    }
+    &-top {
+
+        & span {
+            color: var(--tp-common-black);
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+    &-list {
+        & ul{
+            & li {
+                font-size: 18px;
+                font-weight: 400;
+                list-style-type: none;
+                display: flex; 
+                justify-content: space-between;
+                align-items: center;
+                padding: 19px 0;
+                @media #{$lg,$xs}{
+                    font-size: 16px;
+                }
+                &:not(:last-child){
+                    border-bottom: 1px solid var(--tp-border-1);
+                }
+                & i {
+                    color: #B6B6B6;
+                    font-size: 18px;
+                    font-weight: 300;
+                }
+                &.active {
+                    color: var(--tp-common-black);
+                }
+            } 
+        }
+    }
+    &-button {
+        line-height: 0;
+        & .tp-btn-border {
+            border: 1px solid var(--tp-common-black);
+            &:hover {
+                border: 1px solid var(--tp-theme-1); 
+            }
+        }
+    }
+    &-badge {
+        position: absolute;
+        left: 0;
+        top: 28px;
+        padding: 6px 14px;
+        line-height: 0;
+        border-radius: 0 30px 30px 0;
+        background-color: var(--tp-theme-1);
+        & span {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            line-height: 12px;
+            color: var(--tp-common-white);
+        }
+    }
+    &-top {
+        &-left {
+            @media #{$xs}{
+                margin-bottom: 40px;
+            }
+        }
+        &-plan{
+            border-radius: 14px;
+            padding: 22px 30px;
+            border: 1px solid var(--tp-theme-1);
+            background: #FFF5F5;
+            background-position: bottom left;
+            background-size: cover;
+            background-repeat: no-repeat;
+            @media #{$xs}{
+                padding: 22px 20px;
+            }
+        }
+        &-icon {
+            margin-right: 23px;
+            & > span {
+                display: inline-block;
+                height: 70px;
+                width: 70px;
+                border-radius: 50%;
+                line-height: 70px;
+                text-align: center;
+                color: var(--tp-common-white);
+                background-color: var(--tp-theme-1);
+            }
+        }
+        &-text {
+            & h6 {
+                font-size: 24px;
+                padding-bottom: 8px;
+                @media #{$lg,$md,$xs}{
+                    font-size: 20px;
+                }
+            }
+            & > span {
+                font-size: 16px;
+            }
+        } 
+    }
+}

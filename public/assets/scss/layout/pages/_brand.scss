@@ -1,0 +1,75 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.2 brand css start
+/*----------------------------------------*/
+
+.tp-brand{
+    &-ptb{
+        padding-top: 120px;
+        padding-bottom: 210px;
+    }
+    &-item {
+        border-radius: 14px;
+        transition: .3s;
+        margin-bottom: 10px;
+        border: 1px solid var(--tp-grey-1);
+        &:hover {
+            box-shadow: (0px 30px 60px rgba(0, 0, 0, 0.10));
+        }
+    }
+    &-thumb {
+        height: 120px;
+        line-height: 120px;
+    }
+    &-text {
+        padding: 14px 10px;
+        border-top: 1px solid var(--tp-grey-1);
+        & span {
+            color: rgba(33, 33, 33, 0.40);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2.8px;
+            text-transform: uppercase;
+            & i {
+                font-style: normal;
+                color: var(--tp-common-black);
+            }
+        }
+    }
+    &-review {
+        &-text {
+            margin-top: -18px;
+            & i {
+                font-size: 16px;
+                font-weight: 600;
+                font-style: normal;
+                color: var(--tp-common-black);
+                display: block;
+            }
+            & span {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+            }
+        }
+        
+        &-box {
+            @media #{$xs}{
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            @media #{$sm}{
+                flex-wrap: nowrap;
+            }
+        }
+    }
+
+}
+.tp-brand-2 {
+    &-item {
+        height: 105px;
+        line-height: 105px;
+    }
+
+}

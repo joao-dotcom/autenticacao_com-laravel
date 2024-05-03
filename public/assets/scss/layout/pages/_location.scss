@@ -1,0 +1,118 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.15 location css start
+/*----------------------------------------*/
+.tp-location {
+    &-tab {
+        & ul {
+            & li {
+                margin: 0 8px;
+                &:last-child{
+                    margin-right: 0;
+                }
+                & button {
+                    font-size: 14px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    padding: 4px 20px;
+                    border-radius: 30px;   
+                    transition: .3s;
+                    color: var(--tp-common-black);
+                    background-color: var(--tp-common-white);   
+                    &:hover {
+                        color: var(--tp-common-white); 
+                        background-color: var(--tp-common-black);   
+                    }                
+                    &.active {
+                        color: var(--tp-common-white); 
+                        background-color: var(--tp-common-black);   
+                    }                
+                }
+            }
+        }
+    }
+    &-thumb-box {
+        &:hover {
+            & .tp-location-thumb{
+                & img {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+    &-thumb {
+        position: relative;
+        overflow: hidden;
+        border-radius: 14px; 
+        overflow: hidden;
+        & img {
+            transition: 1.3s all ease;
+        } 
+        &::after{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0.6;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 100%);
+        }
+    }
+    &-thumb-text {
+        position: absolute;
+        z-index: 1;
+        bottom: 25px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        & span {
+            color: var(--tp-common-white);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2.8px;
+            text-transform: uppercase;
+            display: block;
+            padding-bottom: 2px;
+            @media #{$xs}{
+                font-size: 12px;              
+            }
+        }
+    }
+    &-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--tp-common-white);
+        display: inline-block;
+        position: relative;
+        @media #{$xs}{
+            font-size: 20px;              
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            bottom: 0%;
+            right: 0;
+            left: auto;
+            height: 1px;
+            width: 0;
+            background-color: var(--tp-common-white);
+            transition: 0.7s;
+            display: inline-block;
+        }
+        &:hover {
+           &::after{
+                width: 100%;
+                right: auto;
+                left: 0;
+           }
+        }
+    }
+    &-title-box {
+        @media #{$xs}{
+            margin-bottom: 30px;                
+        }
+    }
+}
+

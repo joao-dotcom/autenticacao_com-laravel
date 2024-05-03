@@ -1,0 +1,23 @@
+// font url
+
+$font-url: 'href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet';
+
+// font family
+$font-family: (
+    'ff': (
+        'body': "'Plus Jakarta Sans', sans-serif",
+        'heading': "'Plus Jakarta Sans', sans-serif",
+        'p': "'Plus Jakarta Sans', sans-serif",
+        'fontawesome': '"Font Awesome 6 Pro"',
+    )
+);
+
+// font size
+$font-size: (
+    'fz': (
+        'body': 14px,
+        'p': 16px,
+    )
+);
+
+

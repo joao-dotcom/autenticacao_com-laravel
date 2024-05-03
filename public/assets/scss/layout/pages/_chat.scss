@@ -1,0 +1,268 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.4 chat css start
+/*----------------------------------------*/
+.chat {
+    &__top {
+        padding: 40px;
+        padding-bottom: 30px;
+        @media #{$xl,$lg}{
+            padding: 40px 20px;
+            padding-bottom: 30px;
+        }
+        @media #{$md}{
+            padding: 40px 20px;
+            padding-bottom: 30px;
+        }
+        & .tp-login-input {
+            & input {
+                border-radius: 30px;
+            }
+        }
+    }
+    &__top-title {
+        font-size: 20px;
+        padding-bottom: 20px;
+    }
+    &__author-thumb {
+        margin-right: 20px;
+        flex: 0 0 auto;
+        & img {
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+        }
+    }
+    &__author-info {
+        & h6 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        & > p {
+            font-size: 12px;
+            margin-bottom: 0;
+        }
+    }
+    &__author-wrap {
+        & ul {
+            & li {
+                list-style-type: none;
+                padding: 10px 40px;
+                transition: .3s all ease;  
+                @media #{$xl,$lg,$md}{
+                    padding: 10px 20px;
+                }           
+                &.active {
+                    background-color: #F3F3F3;
+                }
+            }
+        }
+    }
+    &__left-box {
+        margin-right: 32px;
+        @media #{$md,$xs}{
+            margin-right: 0px;
+        }
+    }
+    &__date{
+        position: absolute;
+        right: 0;
+        top: -4px;
+        & span {
+            color: #999;
+            font-size: 12px;
+            font-weight: 400;
+        }
+    }
+    &__author {
+        position: relative;
+    }
+    &__border {
+        border-radius: 14px;
+        margin-top: -55px;
+        position: relative;
+        z-index: 1;
+        border: 1px solid var(--tp-border-1);
+        background-color: var(--tp-common-white);
+        box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.06);
+    }
+    &-box-wrapper{
+        position: relative;
+        margin-left: -58px;
+        @media #{$md}{
+            margin-left: -24px;
+        }
+        @media #{$xs}{
+            margin-left: 0px;
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 100%;
+            background-color: var(--tp-border-1);
+            @media #{$xs}{
+                display: none;
+            }
+        }
+    }
+    &-box {
+        &-top-icon {
+            & a {
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                display: inline-block;
+                line-height: 37px;
+                text-align: center;
+                margin-left: 15px;
+                color: var(--tp-common-black);
+                border: 1px solid var(--tp-border-1);
+                transition: .3s all ease;
+                &:hover {
+                    color: var(--tp-common-white);
+                    background-color: var(--tp-common-black);
+                    border-style: var(--tp-common-black) ;
+                }
+            }
+        }
+        &-bg {
+            padding: 30px 40px;   
+            border-bottom: 1px solid var(--tp-border-1);
+        }
+        
+    }
+    &-list-content {
+        & p {
+            font-size: 14px;
+            font-weight: 400;
+            margin-bottom: 0;
+            padding-right: 15px;
+            color: var(--tp-common-black);
+        }
+    }
+    &-list-content-wrap{
+        border-radius: 14px;
+        padding: 20px;
+        background-color: var(--tp-grey-3);
+    }
+    &-meta-box {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        & span {
+            color: #999;
+            font-size: 12px;
+            line-height: 12px;
+        }
+    }
+    &-list-wrap {
+        padding: 40px;
+    }
+    &-input-wrap{
+        padding-top: 200px;
+        @media #{$xl}{
+            padding-top: 180px;
+        }
+        @media #{$lg}{
+            padding-top: 120px;
+        }
+        @media #{$md}{
+            padding-top: 80px;
+        }
+        @media #{$xs}{
+            padding-top: 40px;
+        }
+    }
+    &-input {
+        & input {
+            border-radius: 30px;
+            height: 50px;
+            line-height: 50px;
+            padding-right: 145px;
+        }
+        & button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 20px;
+            border-radius: 30px;
+            transform: translateY(-50%);
+            color: var(--tp-common-white);
+            background-color: var(--tp-common-black);
+            & span {
+                display: inline-block;
+                transform: translateY(-1px);
+                color: var(--tp-common-white);
+            }
+        }
+    }
+    &-icon {
+        position: absolute;
+        right: 118px;
+        top: 50%;
+        transform: translateY(-50%);
+        & span {
+            color: var(--tp-common-black);
+        }
+    }
+}
+.list-box {
+    margin-right: 390px;
+    margin-bottom: 20px;
+    @media #{$xxl}{
+        margin-right: 340px;
+    }
+    @media #{$xl}{
+        margin-right: 290px;
+    }
+    @media #{$lg}{
+        margin-right: 120px;
+    }
+    @media #{$md,$xs}{
+        margin-right: 0px;
+    }
+
+    &.list-box-right {
+        margin-left: 390px;
+        margin-right: 0;
+        display: flex;
+        justify-content: flex-end;
+        @media #{$xxl}{
+            margin-left: 340px;
+        }
+        @media #{$xl}{
+            margin-left: 290px;
+        }
+        @media #{$lg}{
+            margin-left: 120px;
+        }
+        @media #{$md,$xs}{
+            margin-left: 0px;
+        }
+        & .chat-list-content-wrap {
+            background-color: #FFF2F7;
+        }
+        & .chat-meta-box {
+            & span {
+                color: rgba(245, 9, 100, 0.5);
+            }
+        }
+    }
+}
+.author-info{
+    & span {
+        color: #999;
+        font-size: 12px;
+    }
+}
+.author-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--tp-common-black);
+}

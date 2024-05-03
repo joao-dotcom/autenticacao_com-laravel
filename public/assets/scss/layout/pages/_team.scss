@@ -1,0 +1,77 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.20 team css start
+/*----------------------------------------*/
+.tp-team-wrap{
+    & .tp-category-2-arrow-box {
+        & button {
+            & span {
+                color: var(--tp-common-black);
+                border: 1px solid var(--tp-border-1);
+                transition: .3s;
+                &:hover {
+                    border: 1px solid var(--tp-theme-1);
+                    color: var(--tp-common-white);
+                }
+            }
+        }
+    }
+    & .tp-category-2-thumb {
+        &::after{
+            opacity: 0;
+            visibility: hidden;
+            transition: .4s;
+        }
+    }
+    & .tp-category-2-content {
+        bottom: 35px;
+        right: 30px;
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s;
+        & i {
+            font-style: normal;
+            font-size: 14px;
+            display: block;
+            padding-bottom: 2px;
+            text-transform: uppercase;
+            color:rgba(255, 255, 255, 0.6);
+        }
+    }
+    & .tp-category-2-title {
+        font-size: 26px;
+        @media #{$lg,$md,$xs}{
+            font-size: 18px;
+        }  
+    }
+    & .tp-category-2-item {
+        &:hover {
+            & .tp-category-2-thumb {
+                &::after{
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+            & .tp-category-2-content {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    & .tp-category-2-active {
+        margin-right: -610px;
+        @media #{$lg}{
+            margin-right: -210px;
+        }  
+        @media #{$md,$xs}{
+            margin-right: 0px;
+        }  
+    }
+    & .tp-category-2-slider-box {
+        margin-left: -30px;
+        @media #{$md,$xs}{
+            margin-left: 0;
+        } 
+    }
+}

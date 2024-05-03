@@ -1,0 +1,357 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.1 Footer Style 1
+/*----------------------------------------*/
+.tp-footer {
+    &-right {
+        margin-left: 85px;
+        @media #{$lg}{
+            margin-left: 20px;
+        }
+        @media #{$md}{
+            margin-left: 0;
+            margin-right:150px;
+        }
+        @media #{$xs}{
+            margin-left: 0;
+        }
+    }
+    &-list {
+        margin-right: 15px;
+        @media #{$lg,$md,$xs}{
+            margin-right: 0;
+        }
+        & ul {
+            display: inline-block;
+            & li {
+                float: left;
+                width: 50%;
+                list-style-type: none;
+                margin-bottom: 12px;
+                @media #{$xs}{
+                    width: 100%;
+                }
+                @media #{$sm}{
+                    width: 50%;
+                }
+                & a {
+                    font-size: 14px;
+                    font-weight: 600;
+                    position: relative;                                 
+                    transition: .3s;
+                    display: block;
+                    color: rgba(255, 255, 255, 0.60);
+                    &::after{
+                        position: absolute;
+                        content: '\f178';
+                        top: 50%;
+                        left: 0;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 300;
+                        transform: translateY(-50%);
+                        color: var(--tp-common-white);
+                        font-family: var(--tp-ff-fontawesome);
+                        transition: .3s;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                    &:hover {
+                        padding-left: 24px;
+                        color: var(--tp-common-white);
+                        &::after{
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+    }  
+    &-list-2 {
+        & ul {
+            & li {
+                width: 100%;
+            }
+        }
+    }
+    &-content{
+        &-border {
+            padding-top: 28px;
+            border-top: 4px solid var(--tp-theme-1);
+        }
+        & p {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 25px;
+            color: rgba(255, 255, 255, 0.50);
+            padding-right: 35px;
+            & i {
+                font-style: normal;
+                color: var(--tp-common-white);
+            }
+        }
+        & > a {
+            font-size: 16px;
+            font-weight: 600;
+            transition: .3s;
+            position: relative;
+            color: var(--tp-common-white);
+            & > i {
+                font-weight: 300;
+                margin-right: 5px;
+                display: inline-block;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                bottom: 0%;
+                right: 0;
+                left: auto;
+                height: 1px;
+                width: 0;
+                background-color: var(--tp-common-white);
+                transition: 0.7s;
+                display: inline-block;
+            }
+            &:hover {
+                &::after{
+                    width: 100%;
+                    right: auto;
+                    left: 0;
+                }
+            }
+        }
+    }
+    &-big-text {
+        position: absolute;
+        top: -2%;
+        left: 21.3%;
+        z-index: -1;
+        & span {
+            display: inline-block;
+            font-size: 300px;
+            font-weight: 700;
+            -webkit-text-stroke: 1px #fff;
+            opacity: 8%;
+            color: transparent;
+            line-height: 1;
+        }
+    }  
+
+}
+
+
+/*-- copyright css start here --*/
+.tp-copyright{
+    &-ptb {
+        padding: 30px 0;
+        border-top:1px solid rgba(255, 255, 255, 0.1);
+        @media #{$md,$xs}{
+            padding: 15px 0;
+        }
+    }
+    &-text {
+        & p {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 0;
+            padding-left: 40px;
+            margin-left: 40px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.60);
+            @media #{$lg,$md}{
+                padding-left: 0;
+                margin-left: 0;
+            }
+            @media #{$xs}{
+                padding-left: 0;
+                margin-left: 0;
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+            &::after{
+                position: absolute;
+                content: '';
+                top: 50%;
+                left: 0;
+                height:20px;
+                width: 1px;
+                transform: translateY(-50%);
+                background-color: var(--tp-theme-1);
+                @media #{$lg,$md,$xs}{
+                    display: none;
+                }
+            }
+            & a {
+                font-style: normal;
+                font-weight: 600;
+                color: var(--tp-common-white);
+            }
+        }
+    }
+    &-social {
+        margin-right: 30px;
+        @media #{$xs}{
+            margin-right: 0;
+        }
+        & a{
+            font-size: 16px;
+            transition: .3s;
+            color: rgba(255, 255, 255, 0.60);
+            margin:0 9px;
+            display: inline-block;
+            &:hover {
+                color: var(--tp-common-white);
+            }
+        }
+    }
+    &__lang{
+        position: relative;
+        display: inline-block;
+        & > ul{
+            & > li{
+                list-style-type: none;
+                & > a{
+                    border-radius: 14px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    display: inline-block;
+                    padding:0 25px;
+                    height: 40px;        
+                    line-height: 40px;
+                    text-align: center;                          
+                    border: 1px solid #373737;
+                    background: var(--tp-common-black);
+                    color: var(--tp-common-white);
+                    & span{
+                        margin-left: 7px;
+                    }
+                }
+                & ul{
+                    &.tp-copyright__lang-submenu{
+                        position: absolute;
+                        bottom: 130%;
+                        left: 0px;
+                        z-index: 9;
+                        opacity: 0;
+                        visibility: hidden;
+                        border-radius: 5px;
+                        border: 1px solid #373737;
+                        color: var(--tp-common-black);
+                        background: var(--tp-common-white);
+                        transition: all 0.3s ease-out 0s;
+                        box-shadow: 0 30px 70px 6px rgba(11, 6, 70, 0.08);
+                        width: 100%;                       
+                        &.open{
+                            opacity: 1;
+                            visibility: visible;
+                            bottom: 104%;
+                        }
+                        & > li{                            
+                            list-style-type: none;
+                            padding-bottom: 5px;
+                            padding: 4px 22px;
+                            & a {
+                                border-radius: 0;
+                                font-size: 13px;
+                                transition: .3s;
+                                &:hover {
+                                    color: var(--tp-theme-1);
+                                }
+                            }
+                            &:not(:last-child){
+                                margin-bottom: 0;
+                                border-bottom: 1px solid var(--tp-theme-1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-menu {
+        margin-left: 85px;
+        @media #{$lg}{
+            margin-left: 14px;
+        }
+        & ul {
+            & li {          
+                display: inline-block;
+                list-style: none;
+                margin: 0 22px;
+                & a {
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: var(--tp-common-black);
+                    text-decoration: transparent;
+                    transition: .3s;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+
+                }
+            }
+        }
+    }
+    &-logo {        
+        @media #{$xs}{
+            margin-bottom: 20px;
+        }
+        @media #{$sm}{
+            margin-bottom: 0px;
+        }
+    }
+}
+.tp-copyright-3 {
+    &-height {
+        padding: 18px 0;
+        border-top:1px solid rgba(255, 255, 255, 0.1);
+    }
+    &-text {
+        & p {
+            font-size: 16px;
+            margin-bottom: 0;
+            position: relative;
+            color: rgba(255, 255, 255, 0.60);
+            @media #{$xs}{
+                font-size: 14px;
+            }
+            & a {
+                font-style: normal;
+                font-weight: 600;
+                color: var(--tp-common-white);
+            }
+        }
+    }
+}
+.tp-copyright-style-2{
+    & .tp-copyright-border {
+        border-top: 1px solid var(--tp-common-black);
+    }
+    & .tp-copyright-social {
+        margin-right: 0;
+        & a{
+            color: #666666;
+            &:hover {
+                color: var(--tp-common-black);
+            }
+        }
+    }
+}
+.tp-copyright-2-height {
+    padding: 23px 0;
+    & .tp-copyright-2-text {
+        & p {
+            font-size: 16px;
+            margin-bottom: 0;
+            @media #{$xs}{
+                font-size: 15px;
+            }
+            & a {
+                color: var(--tp-common-black);
+            }
+        }
+    }
+}

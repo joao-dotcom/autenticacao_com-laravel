@@ -1,0 +1,171 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.10 faq css start
+/*----------------------------------------*/
+.tp-faq {
+    &-big-text {
+        position: absolute;
+        top: 10%;
+        left: 34%;
+        z-index: -1;
+        & span {
+            font-size: 300px;
+            font-weight: 700;
+            color: transparent;
+            -webkit-text-stroke:1px #f1f1f1;
+        }
+    }
+    &-circle {
+        position: absolute;
+        bottom: 13%;
+        left: -20%;
+        border-radius: 50%;
+        box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        @media #{$xxl}{
+            left: -20%;
+        }
+        @media #{$xl}{
+            left: -3%;
+            bottom: -8%;
+        }
+        & img {
+            animation: tp-shake 1.9s infinite alternate;
+        }
+    }
+    &-thumb {
+        margin-right: 20px;
+        overflow: hidden;
+        border-radius: 14px;
+        position: relative;
+        @media #{$md}{
+            text-align: center;
+        }
+        @media #{$xxl,$xl,$lg,$md,$xs}{
+            margin-right: 0;
+        }
+        & img {
+            width: 100%;
+            transition: 1.3s all ease;
+            border-radius: 14px;
+            @media #{$md}{
+               width: auto;
+               margin-top: 50px;
+            }
+            @media #{$xs}{
+               margin-top: 50px;
+            }
+        }
+        &::after{
+            position: absolute;
+            top: 0;
+            left: -80%;
+            z-index: 2;
+            display: block;
+            content: "";
+            width: 50%;
+            height: 100%;
+            background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+            background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+            -webkit-transform: skewX(-25deg);
+            -ms-transform: skewX(-25deg);
+            transform: skewX(-25deg);
+            z-index: 1;
+        }
+        &:hover {
+            &::after{
+                -webkit-animation: shine 1s;
+                animation: shine 1s;
+            }
+            & img {
+                transform: scale(1.1);
+            }
+        }
+    }
+    &-right {
+        margin-left: 78px;
+        @media #{$xl}{
+            margin-left: 40px;
+        }
+        @media #{$lg}{
+            margin-left: 20px;
+        }
+        @media #{$md,$xs}{
+            margin-left: 0px;
+        }
+    }
+    &-link {
+        & a {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--tp-common-black);
+            & i {
+                font-style: normal;
+                color: var(--tp-theme-1);
+            }
+        }
+    }
+    &-wrap {
+        margin-left: 40px;
+        @media #{$md,$xs}{
+            margin-left: 0;
+        }
+    }
+    &-topic {
+        & ul {
+            position: relative;
+            overflow: hidden;
+            & li {
+                font-size: 14px;
+                font-weight: 600;
+                color: var(--tp-common-black);
+                margin-left: -24px; 
+                transition: .3s;    
+                &:not(:last-child){
+                    padding-bottom: 11px;
+                }         
+                & i {
+                    display: inline-block;
+                    margin-right: 10px;
+                    color: var(--tp-theme-1);
+                }
+                &:hover {
+                    margin-left: 0;
+                }
+                &.active {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    &-input-box {
+        & input {
+            height: 50px;
+            line-height: 50px;
+            border-radius: 30px;
+            padding: 0 15px;
+            border: 1px solid var(--tp-border-1);
+        }
+    }
+    &-textarea-box {
+        & textarea {
+            height: 120px;
+            border-radius: 14px;
+            padding: 12px 15px;
+            border: 1px solid var(--tp-border-1);
+            &:focus{
+                border-color: var(--tp-theme-1);
+            }
+        }
+    }
+}
+.tp-faq-sidebar{
+    &-wrap{
+        margin-right: -17px;
+        @media #{$md,$xs}{
+            margin-right: 0;
+        }
+    }
+}

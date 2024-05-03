@@ -1,0 +1,212 @@
+
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.9 error css start
+/*----------------------------------------*/
+.tp-error {
+    &-border {
+        padding-top: 175px;
+        padding-bottom: 200px;
+        border-top: 1px solid var(--tp-border-1);
+        @media #{$lg}{
+            padding-top: 140px;
+            padding-bottom: 180px;
+        }
+        @media #{$md}{
+            padding-top: 120px;
+            padding-bottom: 120px;
+        }
+        @media #{$xs}{
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+    }
+    &-number {
+        text-align: center;
+        font-size: 300px;
+        font-weight: 700;
+        color: #fff;
+        display: inline-block;
+        line-height: .9;
+        padding-bottom: 10px;
+        -webkit-text-stroke: 1px var(--tp-theme-1);
+        @media #{$xxl,$xl}{
+            font-size: 260px;
+        }
+        @media #{$lg}{
+            font-size: 250px;
+        }
+        @media #{$md}{
+            font-size: 220px;
+        }
+        @media #{$xs}{
+            font-size: 160px;
+        }
+        @media #{$sm}{
+            font-size: 190px;
+        }
+    }
+    &-big-text {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        text-align: center;
+        font-size: 300px;
+        font-weight: 700;
+        color: transparent;
+        display: inline-block;
+        line-height: .9;
+        padding-bottom: 10px;
+        z-index: -1;
+        -webkit-text-stroke: 1px var(--tp-border-1);
+        @media #{$xxl,$xl}{
+            font-size: 260px;
+        }
+        @media #{$lg}{
+            font-size: 250px;
+        }
+        @media #{$md}{
+            font-size: 220px;
+        }
+        @media #{$xs}{
+            font-size: 160px;
+        }
+        @media #{$sm}{
+            font-size: 190px;
+        }
+    }
+    &-big-text-2 {
+        position: absolute;
+        bottom: 0;
+        left: 0%;
+        right: 0;
+        text-align: center;
+        z-index: -1;
+        @media #{$lg}{
+            bottom: 2%;
+        }
+        & span {
+            color: #fff;
+            font-size: 400px;
+            font-weight: 700;
+            background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3), #FFFFFF00);
+            -webkit-background-clip: text;
+            -webkit-text-stroke: 1px transparent;
+            @media #{$xxl,$xl}{
+                font-size: 320px;
+            }
+            @media #{$lg}{
+                font-size: 240px;
+            }
+            @media #{$md}{
+                font-size: 200px;
+            }
+            @media #{$xs}{
+                font-size: 160px;
+            }
+
+        }
+    }
+    &-number-box {
+        display: inline-block;
+    }
+    &-title {
+        text-align: center;
+        font-size: 60px;
+        font-weight: 600;
+        padding-bottom: 55px;
+        @media #{$xxl,$xl}{
+            font-size: 48px;
+        }
+        @media #{$lg}{
+            font-size: 44px;
+        }
+        @media #{$md}{
+            font-size:44px;
+        }
+        @media #{$xs}{
+            font-size: 26px;
+        }
+        @media #{$sm}{
+            font-size: 32px;
+        }
+    }
+    &-social {
+        margin-left: 30px;
+        & span {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--tp-common-black);
+        }
+        & a {
+            color: #999;
+            font-size: 14px;
+            font-weight: 400;
+            transition: .3s;
+            margin: 0 6px;
+            &:hover {
+                color: var(--tp-common-black);
+            }
+        }
+    }
+    &-button-box {
+        @media #{$xs}{
+            flex-wrap: wrap;
+        }
+        & .tp-btn-theme {
+            @media #{$xs}{
+                margin-bottom: 20px;
+            }
+            @media #{$sm}{
+                margin-bottom: 0px;
+            }
+        }
+    }
+    &-shape {
+        &-1 {
+            position: absolute;
+            top: 4%;
+            left: 4%;
+            animation: tptranslateX2 4s infinite alternate;
+            @media #{$lg,$md,$xs}{
+                transform: scale(.5);
+                left: -5%;
+            }
+        }
+        &-2 {
+            position: absolute;
+            top: 41%;
+            left: 22%;
+            animation: tpupdown 0.8s infinite alternate;
+            @media #{$lg,$md,$xs}{
+                transform: scale(.7);
+                left: 15%;
+                top: 55%;
+            }
+        }
+        &-3 {
+            position: absolute;
+            top: 24%;
+            right: 16%;
+            animation: moving 9s linear infinite;
+            @media #{$lg}{
+                transform: scale(.7);
+            }
+            @media #{$md,$xs}{
+                transform: scale(.7);
+                right: 5%;
+                top: 10%;
+            }
+        }
+        &-4 {
+            position: absolute;
+            right: 6%;
+            bottom: 37%;
+            animation: tptranslateX2 4s infinite alternate;
+            @media #{$lg,$md,$xs}{
+                transform: scale(.7);
+            }
+        }
+    }
+}
